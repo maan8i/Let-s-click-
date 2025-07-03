@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Clicker</title>
+  
+  <!-- HTML -->
+  
+
+  <!-- Custom Styles -->
+  <style>
+    body {
+    font-size: 15pt;
+}
+  </style>
+</head>
+
+<body>
+  <p id="p">0</p>
+  <button id="click">+1 click</button>
+  <a download="clicker.zip">download</a>
+  <script>
+    let clicks = 0;
+const p = document.getElementById('p');
+document.getElementById('click').addEventListener('click', click);
+function click() {
+  clicks += 1;
+  window.location.hash = `#${clicks}`;
+  update();
+}
+function update(){
+  p.textContent = window.location.hash.split('#')[1];
+}
+  </script>
+</body>
+</html>
